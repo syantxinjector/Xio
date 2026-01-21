@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<title>Xio 💕</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: "Segoe UI", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.2);
+        padding: 40px;
+        border-radius: 25px;
+        width: 90%;
+        max-width: 420px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+        from { transform: scale(0.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+        font-size: 2.6em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.9;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 30px;
+        background: #ff4f81;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background: #ff2f6d;
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        color: #ff3b6f;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Xio 💗</h1>
+    <p>
+        မင်းက ငါ့နေ့ရဲ့<br>
+        အလင်းရောင်လေးပါ ✨<br><br>
+
+        မင်းစိတ်ညစ်ရင်  
+        ငါက မင်းလက်ကို မလွှတ်ဘူး 🤍<br><br>
+
+        အပြုံးလေးတစ်ခါပေးရင်  
+        ငါ့ကမ္ဘာလုံးပျော်သွားတယ် 😳
+    </p>
+
+    <button onclick="loveMessage()">
+        ဒီကိုနှိပ်နော် 💕
+    </button>
+</div>
+
+<script>
+    function loveMessage() {
+        alert("Xio က မင်းကို အရမ်းအရမ်းချစ်တယ် 💖\nဘယ်တော့မှ မခွာဘူးနော် 🥺");
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💗";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
